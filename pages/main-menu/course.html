@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+    theme: {
+    extend: {
+      fontFamily: {
+        "popins-bold"       : "popins-bold",
+        "popins-thin"       : "popins-thin",
+        "plus-jakarta-sans" : "plus-jakarta",
+      },
+      colors: {
+        "ungu"        : "#5D50C6",
+        "putih"       : "#FFFFFF",
+        "putih-filter": "#EEEEEE",
+        "putih-abu"   : "#F4F4F4",
+        "orange"      : "#FF5722",
+        "pink"        : "#F85E9F",
+        "hitam"       : "#191825",
+        "hitam-ungu"  : "#150050",
+        "background"  : "linear-gradient(145deg, #cacaca, #f0f0f0)",
+      },
+      boxShadow: {
+        "custom"      : "0 2px 4px rgba(0, 0, 0, 0.1)",
+        "card"        : "0 4px 8px rgba(0, 0, 0, 0.1)",
+        "custom-two"  : "5px 5px 10px #d5d5d5,-5px -5px 10px #ebebeb",
+                },
+            },
+       },
+    plugins: [],
+    };
+    </script>
+
+    <style type="text/tailwindcss">
+    @layer utilities {
+    @font-face {
+        font-family: "popins";
+        src: url("public/font/Poppins/Poppins-Medium.ttf");
+    }
+    @font-face {
+        font-family: "popins-bold";
+        src: url("public/font/Poppins/Poppins-Black.ttf");
+    }
+    @font-face {
+        font-family: "popins-thin";
+        src: url("public/font/Poppins/Poppins-Light.ttf");
+    }
+    @font-face {
+        font-family: "plus-jakarta";
+        src: url("public/font/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf");
+    }
+    html {
+        font-family: "popins";
+        color: #191825;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+    @keyframes goyang {
+        0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0);
+            }
+        }
+    }
+    #home-section{
+        padding-top: 100px;
+    }
+      </style>
+    <!-- Animasi on Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- navigasi -->
+    <nav id="navbar" class="fixed top-0 w-full z-1000 order-1 sm:order-2 lg:order-1" x-data="{open: false}">
+        <div class="flex px-8 py-3 justify-between items-center">
+            <img src="/public/image/logo-hamburger.svg" alt="" class="cursor-pointer block sm:block lg:hidden order-2 sm:order-1" @click="open = !open">
+            <img src="/public/image/logo-navigasi.svg" alt="" class="order-1 sm:order-2">
+            <div class="hidden lg:block lg:order-2">
+                <ul class="flex gap-8 text-xl">
+                    <li><a href="#home-section">Home</a></li>
+                    <li><a href="#tentangkami-section">Vocabulary</a></li>
+                    <li><a href="#layanan-section">Live Class</a></li>
+                    <li><a href="#footer">Certificate</a></li>
+                </ul>
+            </div>
+            <a href="pages/option.html" class="hidden sm:block lg:block sm:order-3 lg:order-3">
+                <button class="bg-ungu text-putih sm:px-6 sm:py-3 lg:px-10 lg:py-3 rounded-lg">
+                    Log in
+                </button>
+            </a>
+        </div>
+
+        <!-- navigasi mobile -->
+        <div class="fixed bottom-0 right-0 left-0 p-4 bg-putih lg:hidden z-20 bg-hitam-0 w-full" x-show="open"
+            x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"
+            x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
+            <ul class="flex justify-between text-biru">
+                <li>
+                    <a href="#home-section" class="flex justify-center flex-col items-center gap-1">
+                        <i class="fa-solid fa-house text-xl text-hitam-ungu"></i>
+                        <span class="font-semibold text-hitam-ungu">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tentangkami-section" class="flex justify-center flex-col items-center gap-1">
+                        <i class="fa-solid fa-users text-xl text-hitam-ungu"></i>
+                        <span class="font-semibold text-hitam-ungu">Vocabulary</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#layanan-section" class="flex justify-center flex-col items-center gap-1">
+                        <i class="fa-solid fa-graduation-cap text-hitam-ungu text-xl"></i>
+                        <span class="font-semibold text-hitam-ungu">Live Class</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#footer" class="flex justify-center flex-col items-center gap-1">
+                        <i class="fa-solid fa-paper-plane text-xl text-hitam-ungu"></i>
+                        <span class="font-semibold text-hitam-ungu">Certificate</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <script src="/index.html"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://kit.fontawesome.com/64503a7986.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

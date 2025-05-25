@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="public/image/icon-website.ico" type="image/x-icon">
+    <title>TryLovve: Allows you to discover beloved.</title>
+    <!-- tailwind.css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+    theme: {
+    extend: {
+      fontFamily: {
+        "popins-bold"       : "popins-bold",
+        "popins-thin"       : "popins-thin",
+        "plus-jakarta-sans" : "plus-jakarta",
+      },
+      colors: {
+        "ungu"        : "#5D50C6",
+        "putih"       : "#FFFFFF",
+        "putih-filter": "#EEEEEE",
+        "putih-abu"   : "#F4F4F4",
+        "orange"      : "#FF5722",
+        "pink"        : "#F85E9F",
+        "hitam"       : "#191825",
+        "hitam-ungu"  : "#150050",
+        "background"  : "linear-gradient(145deg, #cacaca, #f0f0f0)",
+      },
+      boxShadow: {
+        "custom"      : "0 2px 4px rgba(0, 0, 0, 0.1)",
+        "card"        : "0 4px 8px rgba(0, 0, 0, 0.1)",
+        "custom-two"  : "5px 5px 10px #d5d5d5,-5px -5px 10px #ebebeb",
+                },
+            },
+       },
+    plugins: [],
+    };
+    </script>
+
+    <style type="text/tailwindcss">
+    @layer utilities {
+    @font-face {
+        font-family: "popins";
+        src: url("../public/font/Poppins/Poppins-Medium.ttf");
+    }
+    @font-face {
+        font-family: "popins-bold";
+        src: url("../public/font/Poppins/Poppins-Black.ttf");
+    }
+    @font-face {
+        font-family: "popins-thin";
+        src: url("../public/font/Poppins/Poppins-Light.ttf");
+    }
+    @font-face {
+        font-family: "plus-jakarta";
+        src: url("../public/font/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+    }
+    html {
+        font-family: "popins";
+        color: #191825;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+    @keyframes goyang {
+        0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0);
+            }
+        }
+    }
+      </style>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+      .custom-div {
+        box-sizing: border-box; /* Memasukkan padding dalam perhitungan lebar */
+        padding: 20px; /* Padding pada div */
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .btn-2 {
+        background-color: #f85e9f;
+      }
+      .btn-2:hover {
+        background-color: #150050;
+      }
+      .btn-1 {
+        background-color: #ff5722;
+      }
+      .btn-1:hover {
+        background-color: #150050;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- quest 1 -->
+    <div class="custom-div first-options">
+      <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+        Thank you for joining us
+      </h2>
+      <p class="mb-5 text-hitam">
+        Explore our services
+      </p>
+      <div class="grid grid-cols-2 gap-6 place-items-center">
+        <button onclick="redirectTo('option-done')" class="btn-2 py-3 w-full px-6 rounded-lg text-putih-abu shadow-md hover:scale-105 transition-transform duration-200">
+            Course
+        </button>
+        <button onclick="redirectTo('option-done')" class="btn-2 py-3 w-full px-6 rounded-lg text-putih-abu shadow-md hover:scale-105 transition-transform duration-200">
+            Vocabulary
+        </button>
+        <button onclick="redirectTo('option-done')" class="btn-2 py-3 w-full px-6 rounded-lg text-putih-abu shadow-md hover:scale-105 transition-transform duration-200">
+            Live Class
+        </button>
+        <button onclick="redirectTo('option-done')" class="btn-2 py-3 w-full px-6 rounded-lg text-putih-abu shadow-md hover:scale-105 transition-transform duration-200">
+            Certificate
+        </button>
+        </div>
+
+    </div>
+
+    <!-- quest 2 -->
+
+   
+
+    
+
+    <script>
+      function redirectTo(option) {
+        var firstOptions = document.querySelector(".first-options");
+        var secondOptions = document.querySelector(".second-options");
+        var nextOptions = document.querySelector(".next-options");
+
+        if (option === "option1" || option === "option2") {
+          if (secondOptions && secondOptions.style.display !== "block") {
+            if (firstOptions) {
+              firstOptions.style.display = "none";
+            }
+            if (secondOptions) {
+              secondOptions.style.display = "block";
+            }
+          } else if (nextOptions && nextOptions.style.display !== "block") {
+            if (secondOptions) {
+              secondOptions.style.display = "none";
+            }
+            if (nextOptions) {
+              nextOptions.style.display = "block";
+            }
+          }
+        } else if (option === "option-done") {
+          window.location.href = "main-menu/course.html";
+        }
+      }
+    </script>
+  </body>
+</html>
