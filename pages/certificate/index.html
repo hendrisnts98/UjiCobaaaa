@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Tenses & Vocabulary Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-800 font-sans">
+    <div class="max-w-2xl mx-auto py-10">
+      <h1 class="text-3xl font-bold text-center mb-8">Tenses & Vocabulary Quiz</h1>
+      <form id="quizForm" class="space-y-8">
+        <!-- Simple Present Tense -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">1. Simple Present Tense</h2>
+          <div class="space-y-3">
+            <div>
+              <label>1. She ____ to school every day.</label><br>
+              <input type="text" name="q1" class="border p-2 w-full">
+            </div>
+            <div>
+              <label>2. The sun ____ in the east.</label><br>
+              <input type="text" name="q2" class="border p-2 w-full">
+            </div>
+            <div>
+              <label>3. My friends ____ football on Sunday.</label><br>
+              <input type="text" name="q3" class="border p-2 w-full">
+            </div>
+          </div>
+        </div>
+
+        <!-- Present Continuous Tense -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">2. Present Continuous Tense</h2>
+          <div class="space-y-3">
+            <div>
+              <label>4. He ____ (eat) dinner now.</label><br>
+              <input type="text" name="q4" class="border p-2 w-full">
+            </div>
+            <div>
+              <label>5. They ____ (watch) a movie at the moment.</label><br>
+              <input type="text" name="q5" class="border p-2 w-full">
+            </div>
+            <div>
+              <label>6. I ____ (read) a book.</label><br>
+              <input type="text" name="q6" class="border p-2 w-full">
+            </div>
+          </div>
+        </div>
+
+        <!-- Past Simple Tense -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">3. Past Simple Tense</h2>
+          <div class="space-y-3">
+            <div>
+              <label>7. They ____ (go) to the market yesterday.</label><br>
+              <input type="text" name="q7" class="border p-2 w-full">
+            </div>
+            <div>
+              <label>8. She ____ (see) a cat on the street.</label><br>
+              <input type="text" name="q8" class="border p-2 w-full">
+            </div>
+            <div>
+              <label>9. I ____ (write) a letter last night.</label><br>
+              <input type="text" name="q9" class="border p-2 w-full">
+            </div>
+          </div>
+        </div>
+
+        <!-- Future Simple Tense -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">4. Future Simple Tense</h2>
+          <div class="space-y-3">
+            <div>
+              <label>10. He ____ (come) tomorrow.</label><br>
+              <input type="text" name="q10" class="border p-2 w-full">
+            </div>
+            <div>
+              <label>11. We ____ (travel) to Bali next week.</label><br>
+              <input type="text" name="q11" class="border p-2 w-full">
+            </div>
+            <div>
+              <label>12. I ____ (call) you later.</label><br>
+              <input type="text" name="q12" class="border p-2 w-full">
+            </div>
+          </div>
+        </div>
+
+        <!-- Vocabulary -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">5. Vocabulary</h2>
+          <div class="space-y-3">
+            <div>
+              <label>13. What is the synonym of "happy"?</label><br>
+              <input type="text" name="q13" class="border p-2 w-full">
+            </div>
+            <div>
+              <label>14. What is the opposite of "big"?</label><br>
+              <input type="text" name="q14" class="border p-2 w-full">
+            </div>
+            <div>
+              <label>15. Translate: "beautiful" into Bahasa Indonesia</label><br>
+              <input type="text" name="q15" class="border p-2 w-full">
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="text-center mt-8">
+          <button type="button" onclick="submitQuiz()" class="bg-blue-600 hover:bg-blue-800 text-white px-6 py-3 rounded-lg">
+            Submit Quiz
+          </button>
+        </div>
+
+        <!-- Score -->
+        <div id="scoreDisplay" class="text-center mt-6 text-xl font-bold hidden"></div>
+      </form>
+    </div>
+
+    <script>
+      const answers = {
+        q1: "goes",
+        q2: "rises",
+        q3: "play",
+        q4: "is eating",
+        q5: "are watching",
+        q6: "am reading",
+        q7: "went",
+        q8: "saw",
+        q9: "wrote",
+        q10: "will come",
+        q11: "will travel",
+        q12: "will call",
+        q13: "joyful",
+        q14: "small",
+        q15: "cantik"
+      };
+
+      function submitQuiz() {
+        let form = document.getElementById('quizForm');
+        let score = 0;
+        let total = Object.keys(answers).length;
+
+        for (let key in answers) {
+          let input = form[key].value.trim().toLowerCase();
+          if (input === answers[key]) {
+            score++;
+          }
+        }
+
+        let percentage = Math.round((score / total) * 100);
+        let display = document.getElementById('scoreDisplay');
+        display.textContent = `Your score: ${score} / ${total} (${percentage}%)`;
+        display.classList.remove('hidden');
+      }
+    </script>
+  </body>
+</html>

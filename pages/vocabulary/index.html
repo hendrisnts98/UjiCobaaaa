@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="public/image/icon-website.ico" type="image/x-icon">
+    <title>TryLovve: Allows you to discover beloved.</title>
+    <!-- tailwind.css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+    theme: {
+    extend: {
+      fontFamily: {
+        "popins-bold"       : "popins-bold",
+        "popins-thin"       : "popins-thin",
+        "plus-jakarta-sans" : "plus-jakarta",
+      },
+      colors: {
+        "ungu"        : "#5D50C6",
+        "putih"       : "#FFFFFF",
+        "putih-filter": "#EEEEEE",
+        "putih-abu"   : "#F4F4F4",
+        "orange"      : "#FF5722",
+        "pink"        : "#F85E9F",
+        "hitam"       : "#191825",
+        "hitam-ungu"  : "#150050",
+        "background"  : "linear-gradient(145deg, #cacaca, #f0f0f0)",
+      },
+      boxShadow: {
+        "custom"      : "0 2px 4px rgba(0, 0, 0, 0.1)",
+        "card"        : "0 4px 8px rgba(0, 0, 0, 0.1)",
+        "custom-two"  : "5px 5px 10px #d5d5d5,-5px -5px 10px #ebebeb",
+                },
+            },
+       },
+    plugins: [],
+    };
+    </script>
+
+    <style type="text/tailwindcss">
+    @layer utilities {
+    @font-face {
+        font-family: "popins";
+        src: url("../public/font/Poppins/Poppins-Medium.ttf");
+    }
+    @font-face {
+        font-family: "popins-bold";
+        src: url("../public/font/Poppins/Poppins-Black.ttf");
+    }
+    @font-face {
+        font-family: "popins-thin";
+        src: url("../public/font/Poppins/Poppins-Light.ttf");
+    }
+    @font-face {
+        font-family: "plus-jakarta";
+        src: url("../public/font/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+    }
+    html {
+        font-family: "popins";
+        color: #191825;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+    @keyframes goyang {
+        0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0);
+            }
+        }
+    }
+      </style>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+      .custom-div {
+        box-sizing: border-box; /* Memasukkan padding dalam perhitungan lebar */
+        padding: 20px; /* Padding pada div */
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .btn-2 {
+        background-color: #f85e9f;
+      }
+      .btn-2:hover {
+        background-color: #150050;
+      }
+      .btn-1 {
+        background-color: #ff5722;
+      }
+      .btn-1:hover {
+        background-color: #150050;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- quest 1 -->
+    <section class="course">
+      <div class="custom-div first-options">
+        <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+          Hi, welcome to vocabulary
+        </h2>
+        <p class="mb-5 text-hitam">
+          Vocabulary is all the words you understand, 
+          <br />
+          hear, read, write and speak in a language.
+        </p>
+        <button
+          onclick="redirectTo('option1')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Next
+        </button>
+      </div>
+
+      <!-- quest 2 -->
+      <div class="custom-div second-options hidden">
+        <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+          Types of Vocabulary
+        </h2>
+        <p class="mb-5 text-hitam">
+          Active Vocabulary:  <br />
+          Vocabulary that you frequently use when speaking or writing. <br>
+          <i class="text-xs">Examples: eat, go, study, work</i>
+        </p>
+        <p class="mb-5 text-hitam">
+          Passive Vocabulary: <br />
+          Vocabulary that you understand when reading or hearing, <br> but rarely use yourself. <br>
+          <i class="text-xs">Examples: sophisticated, tremendous, nevertheless</i>
+        </p>
+        <button
+          onclick="redirectTo('option2')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Next
+        </button>
+      </div>
+
+      <!-- quest 3 -->
+      <div class="custom-div third-options hidden">
+        <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+          The Importance of Learning Vocabulary
+        </h2>
+        <p class="mb-5 text-hitam">1. Helps you understand English reading and conversation.</p>
+        <p class="mb-5 text-hitam">2. Improves your ability to express yourself in English.</p>
+        <p class="mb-5 text-hitam">3. Increases your confidence in using English.</p>
+        <button
+          onclick="redirectTo('option3')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Next
+        </button>
+      </div>
+
+      <!-- quest 4 -->
+      <div class="custom-div fourth-options hidden">
+        <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+          Examples of Basic Vocabulary in English
+        </h2>
+        <table class="border-2 border-blue-500 text-center text-sm mb-4">
+          <thead>
+            <tr class="bg-blue-100">
+              <th class="border-2 border-blue-500 px-6 py-3">Example</th>
+              <th class="border-2 border-blue-500 px-6 py-3">Meaning</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border-2 border-blue-500 px-6 py-3">Book</td>
+              <td class="border-2 border-blue-500 px-6 py-3">Buku</td>
+            </tr>
+            <tr>
+              <td class="border-2 border-blue-500 px-6 py-3">Happy</td>
+              <td class="border-2 border-blue-500 px-6 py-3">Bahagia</td>
+            </tr>
+            <tr>
+              <td class="border-2 border-blue-500 px-6 py-3">Eat</td>
+              <td class="border-2 border-blue-500 px-6 py-3">Makan</td>
+            </tr>
+          </tbody>
+        </table>
+        <button
+          onclick="redirectTo('option4')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Next
+        </button>
+      </div>
+
+      <!-- quest 5 -->
+      <div class="custom-div five-options hidden">
+        <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+          Tips to Increase Vocabulary
+        </h2>
+        <p class="mb-5 text-hitam">1. Read often (articles, short stories, novels).</p>
+        <p class="mb-5 text-hitam">2. Listen to English songs, podcasts, or audiobooks.</p>
+        <p class="mb-5 text-hitam">3. Practice speaking with friends or language partners.</p>
+        <button
+          onclick="redirectTo('option5')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Next
+        </button>
+      </div>
+
+      <!-- quest 6 -->
+      <div class="custom-div six-options hidden">
+        <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+          Great! You completed the course
+        </h2>
+        <img src="../../public/image/3210116.jpg" alt="Course Image" class="w-full h-[250px] object-cover rounded-lg mb-4 mx-auto">
+
+        <div class="flex justify-between">
+          <button
+          onclick="redirectTo('option-close')"
+          class="btn-2 py-3 px-5 rounded-lg text-putih-abu bg-pink"
+        >
+          Close
+        </button>
+        <button
+          onclick="redirectTo('option-done')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu bg-orange"
+        >
+          Quis
+        </button>
+        </div>
+      </div>
+    </section>
+
+
+    <script>
+      function redirectTo(option) {
+        var firstOptions = document.querySelector(".first-options");
+        var secondOptions = document.querySelector(".second-options");
+        var thirdOptions = document.querySelector(".third-options");
+        var fourthOptions = document.querySelector(".fourth-options");
+        var fiveOptions = document.querySelector(".five-options");
+        var sixOptions = document.querySelector(".six-options");
+
+        if (option === "option1") {
+          firstOptions.style.display = "none";
+          secondOptions.style.display = "block";
+        } else if (option === "option2") {
+          secondOptions.style.display = "none";
+          thirdOptions.style.display = "block";
+        } else if (option === "option3") {
+          thirdOptions.style.display = "none";
+          fourthOptions.style.display = "block";
+        } else if (option === "option4") {
+          fourthOptions.style.display = "none";
+          fiveOptions.style.display = "block";
+        } else if (option === "option5") {
+          fiveOptions.style.display = "none";
+          sixOptions.style.display = "block";
+        } else if (option === "option-close") {
+          window.location.href = "../main-menu.html"; // Ganti dengan halaman tujuanmu
+        } else if (option === "option-done") {
+          window.location.href = "main-menu.html"; // Ganti dengan halaman tujuanmu
+        }
+      }
+    </script>
+
+  </body>
+</html>

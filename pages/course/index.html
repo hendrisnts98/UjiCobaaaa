@@ -123,33 +123,39 @@
     <!-- quest 1 -->
 <div class="custom-div first-options">
   <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
-    Thank you for joining us
+    Happy learning friends
   </h2>
-  <p class="mb-5 text-hitam">Explore our services</p>
+  <p class="mb-5 text-hitam">what do you want to study?</p>
   <div class="grid grid-cols-2 gap-6 place-items-center">
-    <button onclick="redirectTo('course')" class="btn-2 py-3 w-full px-6 rounded-lg text-putih-abu shadow-md hover:scale-105 transition-transform duration-200">
-      Course
+    <button onclick="redirectTo('one')" class="btn-2 py-3 w-full px-6 rounded-lg text-putih-abu shadow-md hover:scale-105 transition-transform duration-200">
+      Simple Present Tense
     </button>
-    <button onclick="redirectTo('vocabulary')" class="btn-2 py-3 w-full px-6 rounded-lg text-putih-abu shadow-md hover:scale-105 transition-transform duration-200">
-      Vocabulary
+    <button onclick="redirectTo('two')" class="btn-2 py-3 w-full px-6 rounded-lg text-putih-abu shadow-md hover:scale-105 transition-transform duration-200">
+      Present Continuous Tense
     </button>
-    <button onclick="redirectTo('live-class')" class="btn-2 py-3 w-full px-6 rounded-lg text-putih-abu shadow-md hover:scale-105 transition-transform duration-200">
-      Live Class
+    <button onclick="redirectTo('three')" class="btn-2 py-3 w-full px-6 rounded-lg text-putih-abu shadow-md hover:scale-105 transition-transform duration-200">
+      Past Simple Tense
     </button>
-    <button onclick="redirectTo('certificate')" class="btn-2 py-3 w-full px-6 rounded-lg text-putih-abu shadow-md hover:scale-105 transition-transform duration-200">
-      Certificate
+    <button onclick="redirectTo('four')" class="btn-2 py-3 w-full px-6 rounded-lg text-putih-abu shadow-md hover:scale-105 transition-transform duration-200">
+      Future Simple Tense
     </button>
   </div>
+  <div class="flex justify-between mt-6">
+  <button onclick="redirectTo('backTo')" class="bg-[#150050] py-2 px-4 rounded text-putih">Back</button>
+  <button class="bg-[#150050] py-2 px-4 rounded text-putih">Next</button>
+</div>
+
 </div>
 
 
     <script>
   function redirectTo(option) {
     const pages = {
-      "course": "course/index.html",
-      "vocabulary": "vocabulary/index.html",
-      "live-class": "live-class/index.html",
-      "certificate": "main-menu/certificate.html"
+      "one": "simplePresentTense.html",
+      "two": "continousTense.html",
+      "three": "pastSimpleTense.html",
+      "four": "futureSimpleTense.html",
+      "backTo": "../main-menu.html"
     };
 
     if (pages[option]) {

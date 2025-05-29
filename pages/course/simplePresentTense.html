@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="public/image/icon-website.ico" type="image/x-icon">
+    <title>TryLovve: Allows you to discover beloved.</title>
+    <!-- tailwind.css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+    theme: {
+    extend: {
+      fontFamily: {
+        "popins-bold"       : "popins-bold",
+        "popins-thin"       : "popins-thin",
+        "plus-jakarta-sans" : "plus-jakarta",
+      },
+      colors: {
+        "ungu"        : "#5D50C6",
+        "putih"       : "#FFFFFF",
+        "putih-filter": "#EEEEEE",
+        "putih-abu"   : "#F4F4F4",
+        "orange"      : "#FF5722",
+        "pink"        : "#F85E9F",
+        "hitam"       : "#191825",
+        "hitam-ungu"  : "#150050",
+        "background"  : "linear-gradient(145deg, #cacaca, #f0f0f0)",
+      },
+      boxShadow: {
+        "custom"      : "0 2px 4px rgba(0, 0, 0, 0.1)",
+        "card"        : "0 4px 8px rgba(0, 0, 0, 0.1)",
+        "custom-two"  : "5px 5px 10px #d5d5d5,-5px -5px 10px #ebebeb",
+                },
+            },
+       },
+    plugins: [],
+    };
+    </script>
+
+    <style type="text/tailwindcss">
+    @layer utilities {
+    @font-face {
+        font-family: "popins";
+        src: url("../public/font/Poppins/Poppins-Medium.ttf");
+    }
+    @font-face {
+        font-family: "popins-bold";
+        src: url("../public/font/Poppins/Poppins-Black.ttf");
+    }
+    @font-face {
+        font-family: "popins-thin";
+        src: url("../public/font/Poppins/Poppins-Light.ttf");
+    }
+    @font-face {
+        font-family: "plus-jakarta";
+        src: url("../public/font/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+    }
+    html {
+        font-family: "popins";
+        color: #191825;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+    @keyframes goyang {
+        0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0);
+            }
+        }
+    }
+      </style>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f4;
+      }
+      .custom-div {
+        box-sizing: border-box; /* Memasukkan padding dalam perhitungan lebar */
+        padding: 20px; /* Padding pada div */
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      .btn-2 {
+        background-color: #f85e9f;
+      }
+      .btn-2:hover {
+        background-color: #150050;
+      }
+      .btn-1 {
+        background-color: #ff5722;
+      }
+      .btn-1:hover {
+        background-color: #150050;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- quest 1 -->
+    <section class="course">
+      <div class="custom-div first-options">
+        <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+          Definition
+        </h2>
+        <p class="mb-5 text-hitam">
+          Simple Present Tense is a tense used to express habits, general facts,
+          <br />
+          or events that occur routinely and repeatedly in everyday life.
+        </p>
+        <button
+          onclick="redirectTo('option1')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Next
+        </button>
+      </div>
+
+      <!-- quest 2 -->
+      <div class="custom-div second-options hidden">
+        <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+          Function
+        </h2>
+        <p class="mb-5 text-hitam">
+          Expressing routine activities or habits: <br />
+          <i class="text-xs">She goes to school every morning.</i>
+        </p>
+        <p class="mb-5 text-hitam">
+          Stating general facts or scientific truths: <br />
+          <i class="text-xs">The sun rises in the east.</i>
+        </p>
+        <p class="mb-5 text-hitam">
+          Expressing a fixed schedule: <br />
+          <i class="text-xs"> The train leaves at 6 a.m.</i>
+        </p>
+        <button
+          onclick="redirectTo('option2')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Next
+        </button>
+      </div>
+
+      <!-- quest 3 -->
+      <div class="custom-div third-options hidden">
+        <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+          Formula
+        </h2>
+        <p class="mb-5 text-hitam">Positive Sentences (+)</p>
+        <table class="border-2 border-blue-500 text-center text-sm mb-4">
+          <thead>
+            <tr class="bg-blue-100">
+              <th class="border-2 border-blue-500 px-6 py-3">Subject</th>
+              <th class="border-2 border-blue-500 px-6 py-3">Verb</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border-2 border-blue-500 px-6 py-3">
+                I / You / We / They
+              </td>
+              <td class="border-2 border-blue-500 px-6 py-3">
+                V1 (verb dasar)
+              </td>
+            </tr>
+            <tr>
+              <td class="border-2 border-blue-500 px-6 py-3">He / She / It</td>
+              <td class="border-2 border-blue-500 px-6 py-3">V1 + -s / -es</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="mb-5 text-hitam">
+          Example: She likes chocolate.
+        </p>
+        <button
+          onclick="redirectTo('option3')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Next
+        </button>
+      </div>
+
+      <!-- quest 4 -->
+      <div class="custom-div fourth-options hidden">
+        <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+          Formula
+        </h2>
+        <p class="mb-5 text-hitam">Negative Sentences (–)</p>
+        <table class="border-2 border-blue-500 text-center text-sm mb-4">
+          <thead>
+            <tr class="bg-blue-100">
+              <th class="border-2 border-blue-500 px-6 py-3">Subject</th>
+              <th class="border-2 border-blue-500 px-6 py-3">Auxiliary</th>
+              <th class="border-2 border-blue-500 px-6 py-3">Verb</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border-2 border-blue-500 px-6 py-3">
+                I / You / We / They
+              </td>
+              <td class="border-2 border-blue-500 px-6 py-3">
+                do not (don't)
+              </td>
+              <td class="border-2 border-blue-500 px-6 py-3">
+                V1
+              </td>
+            </tr>
+            <tr>
+              <td class="border-2 border-blue-500 px-6 py-3">He / She / It</td>
+              <td class="border-2 border-blue-500 px-6 py-3">does not (doesn't)</td>
+              <td class="border-2 border-blue-500 px-6 py-3">	V1</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="mb-5 text-hitam">
+          Example: She does not (doesn't) like chocolate.
+        </p>
+        <button
+          onclick="redirectTo('option4')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Next
+        </button>
+      </div>
+
+      <!-- quest 5 -->
+      <div class="custom-div five-options hidden">
+        <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+          Formula
+        </h2>
+        <p class="mb-5 text-hitam">Interrogative Sentence (?)</p>
+        <table class="border-2 border-blue-500 text-center text-sm mb-4">
+          <thead>
+            <tr class="bg-blue-100">
+              <th class="border-2 border-blue-500 px-6 py-3">Auxiliary</th>
+              <th class="border-2 border-blue-500 px-6 py-3">Subject</th>
+              <th class="border-2 border-blue-500 px-6 py-3">Verb</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border-2 border-blue-500 px-6 py-3">Do</td>
+              <td class="border-2 border-blue-500 px-6 py-3">I/You/We/They</td>
+              <td class="border-2 border-blue-500 px-6 py-3">V1</td>
+            </tr>
+            <tr>
+              <td class="border-2 border-blue-500 px-6 py-3">Does</td>
+              <td class="border-2 border-blue-500 px-6 py-3">He/She/It</td>
+              <td class="border-2 border-blue-500 px-6 py-3">	V1</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="mb-5 text-hitam">
+          Example: Do you like chocolate?
+        </p>
+        <button
+          onclick="redirectTo('option5')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu"
+        >
+          Next
+        </button>
+      </div>
+
+      <!-- quest 6 -->
+      <div class="custom-div six-options hidden">
+        <h2 class="text-2xl font-bold mb-3 text-justify text-hitam-ungu">
+          Great! You completed the course
+        </h2>
+        <img src="../../public/image/3210116.jpg" alt="Course Image" class="w-full h-[250px] object-cover rounded-lg mb-4 mx-auto">
+
+        <div class="flex justify-between">
+          <button
+          onclick="redirectTo('option-close')"
+          class="btn-2 py-3 px-5 rounded-lg text-putih-abu bg-pink"
+        >
+          Close
+        </button>
+        <button
+          onclick="redirectTo('option-done')"
+          class="btn-2 py-3 px-6 rounded-lg text-putih-abu bg-orange"
+        >
+          Quis
+        </button>
+        </div>
+      </div>
+    </section>
+
+
+    <script>
+      function redirectTo(option) {
+        var firstOptions = document.querySelector(".first-options");
+        var secondOptions = document.querySelector(".second-options");
+        var thirdOptions = document.querySelector(".third-options");
+        var fourthOptions = document.querySelector(".fourth-options");
+        var fiveOptions = document.querySelector(".five-options");
+        var sixOptions = document.querySelector(".six-options");
+
+        if (option === "option1") {
+          firstOptions.style.display = "none";
+          secondOptions.style.display = "block";
+        } else if (option === "option2") {
+          secondOptions.style.display = "none";
+          thirdOptions.style.display = "block";
+        } else if (option === "option3") {
+          thirdOptions.style.display = "none";
+          fourthOptions.style.display = "block";
+        } else if (option === "option4") {
+          fourthOptions.style.display = "none";
+          fiveOptions.style.display = "block";
+        } else if (option === "option5") {
+          fiveOptions.style.display = "none";
+          sixOptions.style.display = "block";
+        } else if (option === "option-close") {
+          window.location.href = "index.html"; // Ganti dengan halaman tujuanmu
+        } else if (option === "option-done") {
+          window.location.href = "main-menu.html"; // Ganti dengan halaman tujuanmu
+        }
+      }
+    </script>
+
+  </body>
+</html>
